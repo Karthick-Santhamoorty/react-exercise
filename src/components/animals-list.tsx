@@ -67,7 +67,7 @@ const AnimalsList = () => {
 
   return (
     <div className='flex flex-col'>
-      <h1>Animal List</h1>
+      <h1>Animal Dictionary</h1>
       <div className=' bg-gray-200 border rounded mt-10 mx-auto'>
         <div className='mt-3 border-b p-4 border-b-black px-6'>
           <div className='flex items-center justify-between'>
@@ -89,7 +89,10 @@ const AnimalsList = () => {
                   setFilteredAnimalList([]);
                   setInputValue("");
                 }} />
-                : <FaFilter size="1.5rem" className={`mx-2 ${inputValue ? 'cursor-pointer' : 'opacity-50 cursor-not-allowed'}`} onClick={() => filterAnimal()} />
+                :
+                <span className={`${!inputValue && 'cursor-not-allowed'}`}>
+                  <FaFilter size="1.5rem" className={`mx-2 ${inputValue ? 'cursor-pointer' : 'opacity-50 pointer-events-none'}`} onClick={() => filterAnimal()} />
+                </span> 
               }
             </div>
           </div>
