@@ -1,7 +1,7 @@
 import animals from './animals-dictionary';
 
 const getAnimal = () => {
-  return animals[Math.floor((Math.random()*animals.length))];
+  return animals;
 };
 
 export default {getAnimal};
